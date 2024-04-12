@@ -1,5 +1,9 @@
 class areas:
     
+    areaDesarrollo = []
+    areaContabilidad = []
+    areaDisenno = []
+    areaMarketing = []
     maxDesarrolladores = 0
     maxDiseno = 0
     maxMarketing = 0
@@ -10,3 +14,48 @@ class areas:
        self.maxDiseno = maxAreaDis
        self.maxMarketing = maxAreaMarke
        self.maxContabilidad = maxAreaContabilidad
+    
+    def obtenerDatosArea(self, area):
+        if(area == 1):
+            return self.areaDesarrollo
+        elif(area == 2):
+            return self.areaDisenno
+        elif (area == 3):
+            return self.areaMarketing
+        elif (area == 4):
+            return self.areaContabilidad
+    def registrarUsuario(self, usuario, area):
+        if (area== 1):
+            if(self.maxDesarrolladores == 0):
+                return -1
+            self.areaDesarrollo.append(usuario)
+            self.maxDesarrolladores-= 1
+            return 1
+        elif(area == 2):
+            if(self.maxDiseno == 0):
+                return -1
+            self.areaDisenno.append(usuario)
+            self.maxDiseno-= 1
+            return 1
+        elif (area == 3):
+            if(self.maxMarketing == 0):
+                return -1
+            self.areaMarketing.append(usuario)
+            self.maxMarketing-= 1
+            return 1
+        elif (area == 4):
+            if(self.maxContabilidad == 0):
+                return -1
+            self.areaContabilidad.append(usuario)
+            self.maxContabilidad-= 1
+            return 1
+    def consultarDisponibles(self,area):
+        if(area == 1):
+            return self.maxDesarrolladores
+        elif(area == 2):
+            return self.maxDiseno
+        elif (area == 3):
+            return self.maxMarketing
+        elif (area == 4):
+            return self.maxContabilidad
+    
