@@ -34,7 +34,29 @@ def registrar_usuario():
         print("Error: La sede debe contener solo letras.")
         sede = input("Ingrese su sede: ")
 
-# Comentario innecesario 
+def consultar_area():
+    while True:
+        print("\nMenú de Áreas")
+        print("1. Área Desarrollo")
+        print("2. Área Diseño")
+        print("3. Área Marketing")
+        print("4. Área Contabilidad")
+        print("5. Volver")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == '1':
+            area_desarrollo()
+        elif opcion == '2':
+            area_diseno()
+        elif opcion == '3':
+            area_marketing()
+        elif opcion == '4':
+            area_contabilidad()
+        elif opcion == '5':
+            break
+        else:
+            print("Opción no válida, intente de nuevo.")
 
     user_id = random.randint(100, 999)
     Usuarios.append({
@@ -52,16 +74,23 @@ def registrar_usuario():
 def main_menu():
     while True:
         print("\nMenú Principal")
-        print("1. Registrar Usuario")
-        print("2. Opción 2")
+        print("1. Seleccionar Área")
+        print("2. Registrar Usuario")
         print("3. Opción 3")
         print("4. Opción 4")
+        print("5. Salir")
         opcion = input("Seleccione una opción: ")
         
         if opcion == '1':
+            consultar_area()
+        elif opcion == '2':
             registrar_usuario()
-        elif opcion in ['2', '3', '4']:
-            print("Esta opción aún no está implementada.")
+        elif opcion == '3':
+            print("Hola")
+        elif opcion == '4':
+            print("Mundo")
+        elif opcion == '5':
+            break
         else:
             print("Opción no válida, intente de nuevo.")
 
