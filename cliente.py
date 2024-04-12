@@ -34,6 +34,19 @@ def registrar_usuario():
         print("Error: La sede debe contener solo letras.")
         sede = input("Ingrese su sede: ")
 
+    user_id = random.randint(100, 999)
+    Usuarios.append({
+        'ID': user_id,
+        'Nombre': nombre,
+        'Apellido': apellido,
+        'Cédula': cedula,
+        'Teléfono': telefono,
+        'Oficina': oficina,
+        'Sede': sede
+    })
+    
+    print(f"ID: {user_id}, te has registrado con éxito")
+
 def consultar_area():
     while True:
         print("\nMenú de Áreas")
@@ -58,18 +71,17 @@ def consultar_area():
         else:
             print("Opción no válida, intente de nuevo.")
 
-    user_id = random.randint(100, 999)
-    Usuarios.append({
-        'ID': user_id,
-        'Nombre': nombre,
-        'Apellido': apellido,
-        'Cédula': cedula,
-        'Teléfono': telefono,
-        'Oficina': oficina,
-        'Sede': sede
-    })
-    
-    print(f"ID: {user_id}, te has registrado con éxito")
+def area_desarrollo():
+    print("Área Desarrollo seleccionada.")
+
+def area_diseno():
+    print("Área Diseño seleccionada.")
+
+def area_marketing():
+    print("Área Marketing seleccionada.")
+
+def area_contabilidad():
+    print("Área Contabilidad seleccionada.")
 
 def main_menu():
     while True:
