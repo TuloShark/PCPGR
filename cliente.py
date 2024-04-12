@@ -34,6 +34,8 @@ def registrar_usuario():
         print("Error: La sede debe contener solo letras.")
         sede = input("Ingrese su sede: ")
 
+# Comentario innecesario 
+
     user_id = random.randint(100, 999)
     Usuarios.append({
         'ID': user_id,
