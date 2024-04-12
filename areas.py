@@ -89,6 +89,3 @@ class areas:
                     self.maxContabilidad += 1
                     return 1
             return -1
-
-
-    
