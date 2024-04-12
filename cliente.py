@@ -1,4 +1,5 @@
 import random
+from areas import areas1
 
 Usuarios = []
 
@@ -58,30 +59,14 @@ def consultar_area():
 
         opcion = input("Seleccione una opción: ")
 
-        if opcion == '1':
-            area_desarrollo()
-        elif opcion == '2':
-            area_diseno()
-        elif opcion == '3':
-            area_marketing()
-        elif opcion == '4':
-            area_contabilidad()
+        if opcion in ['1', '2', '3', '4']:
+            area_idx = int(opcion)
+            disponibles = mi_area.consultarDisponibles(area_idx)
+            print(f"Espacios disponibles en el área seleccionada: {disponibles}")
         elif opcion == '5':
             break
         else:
             print("Opción no válida, intente de nuevo.")
-
-def area_desarrollo():
-    print("Área Desarrollo seleccionada.")
-
-def area_diseno():
-    print("Área Diseño seleccionada.")
-
-def area_marketing():
-    print("Área Marketing seleccionada.")
-
-def area_contabilidad():
-    print("Área Contabilidad seleccionada.")
 
 def main_menu():
     while True:
@@ -107,4 +92,5 @@ def main_menu():
             print("Opción no válida, intente de nuevo.")
 
 if __name__ == "__main__":
+    mi_area = areas(maxAreaDis=5, maxAreaDevs=5, maxAreaMarke=5, maxAreaContabilidad=5)
     main_menu()
