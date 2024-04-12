@@ -62,27 +62,31 @@ class areas:
     def eliminarUsuario(self, idUsuario, area):
         if(area == 1):
             for usuario in self.areaDesarrollo:
-                if (usuario.getId == idUsuario):
+                if (usuario.getId() == idUsuario):
                     self.areaDesarrollo.remove(usuario)
+                    self.maxDesarrolladores+= 1
                     return 1
             return -1
         elif(area == 2):
             for usuario in self.areaDisenno:
-                if (usuario.getId == idUsuario):
+                if (usuario.getId() == idUsuario):
                     self.areaDisenno.remove(usuario)
+                    self.maxDiseno+= 1
                     return 1
             return -1
         elif (area == 3):
             for usuario in self.areaMarketing:
-                if (usuario.getId == idUsuario):
+                if (usuario.getId() == idUsuario):
                     self.areaMarketing.remove(usuario)
+                    self.maxMarketing+= 1
                     return 1
             return -1
         elif (area == 4):
             for usuario in self.areaContabilidad:
-                if (usuario.getId == idUsuario):
+                if (usuario.getId() == idUsuario):
                     self.areaContabilidad.remove(usuario)
+                    self.maxContabilidad += 1
                     return 1
             return -1
 
-    
+     
