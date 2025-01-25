@@ -2,7 +2,17 @@ import random
 from areas import areas
 from usuario import usuario
 
-def registrar_usuario(mi_area):
+def registrar_usuario(mi_area, nuevo_usuario):
+    """
+    Registers a new user in the system.
+
+    Args:
+        mi_area (object): An object representing the area where the user will be registered.
+        nuevo_usuario (usuario): A usuario object representing the new user to be registered.
+
+    Returns:
+        int: 1 if the registration was successful, -1 if there is no available field in the area, and 0 if the registration failed.
+    """
     print("\nRegistrar Usuario")
     user_id = random.randint(100, 999)
     nombre = input("Ingrese su nombre: ")

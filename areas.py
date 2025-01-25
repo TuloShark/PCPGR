@@ -1,5 +1,8 @@
-from usuario import *
+
 class areas:
+    """
+    This class represents the areas of the company.
+    """
     
     areaDesarrollo = []
     areaContabilidad = []
@@ -11,12 +14,30 @@ class areas:
     maxContabilidad = 0
     
     def __init__(self, maxAreaDis, maxAreaDevs, maxAreaMarke, maxAreaContabilidad):
-       self.maxDesarrolladores = maxAreaDevs
-       self.maxDiseno = maxAreaDis
-       self.maxMarketing = maxAreaMarke
-       self.maxContabilidad = maxAreaContabilidad
+        """
+        Initializes the areas of the company.
+        
+        Parameters:
+        maxAreaDis (int): Maximum number of developers in the design area.
+        maxAreaDevs (int): Maximum number of developers in the development area.
+        maxAreaMarke (int): Maximum number of developers in the marketing area.
+        maxAreaContabilidad (int): Maximum number of developers in the accounting area.
+        """
+        self.maxDesarrolladores = maxAreaDevs
+        self.maxDiseno = maxAreaDis
+        self.maxMarketing = maxAreaMarke
+        self.maxContabilidad = maxAreaContabilidad
     
     def obtenerDatosArea(self, area):
+        """
+        Returns the users in the specified area.
+        
+        Parameters:
+        area (int): Area to retrieve the users from.
+        
+        Returns:
+        list: List of users in the specified area.
+        """
         if(area == 1):
             return self.areaDesarrollo
         elif(area == 2):
@@ -26,6 +47,16 @@ class areas:
         elif (area == 4):
             return self.areaContabilidad
     def registrarUsuario(self, usuario, area):
+        """
+        Registers a user in the specified area.
+        
+        Parameters:
+        usuario (object): User to be registered.
+        area (int): Area to register the user in.
+        
+        Returns:
+        int: 1 if the user was successfully registered, -1 if the area is full.
+        """
         if (area== 1):
             if(self.maxDesarrolladores == 0):
                 return -1
@@ -51,6 +82,15 @@ class areas:
             self.maxContabilidad-= 1
             return 1
     def consultarDisponibles(self,area):
+        """
+        Returns the number of available developers in the specified area.
+        
+        Parameters:
+        area (int): Area to retrieve the available developers from.
+        
+        Returns:
+        int: Number of available developers in the specified area.
+        """
         if(area == 1):
             return self.maxDesarrolladores
         elif(area == 2):
@@ -60,6 +100,16 @@ class areas:
         elif (area == 4):
             return self.maxContabilidad
     def eliminarUsuario(self, idUsuario, area):
+        """
+        Removes a user from the specified area.
+        
+        Parameters:
+        idUsuario (int): ID of the user to be removed.
+        area (int): Area to remove the user from.
+        
+        Returns:
+        int: 1 if the user was successfully removed, -1 if the user was not found.
+        """
         idUsuario = int(idUsuario)
         if area == 1:
             for usuario in self.areaDesarrollo:
